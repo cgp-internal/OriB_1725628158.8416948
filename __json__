@@ -1,0 +1,6 @@
+{
+    "__json__": "{\n    \"description\": \"A JSON file containing descriptions of utility files\",\n    \"dependencies\": {\n        \"utils\\\\auth-utils.ts\": [\"createToken\", \"verifyToken\"],\n        \"utils\\\\config.ts\": [\"appConfig\", \"BaseAppConfig\", \"DevAppConfig\", \"ProdAppConfig\"],\n        \"utils\\\\helpers.ts\": [\"logIt\", \"logError\", \"isDbSeverUp\"],\n        \"utils\\\\image-helpers.ts\": [\"saveImage\"],\n        \"utils\\\\order-utils.ts\": []\n    },\n    \"exposes\": []\n}",
+    "middlewares\\auth-middleware.ts": "{\n    \"description\": \"Auth middleware for token verification\",\n    \"dependencies\": {\n        \"../utils/auth-utils\": [\"verifyToken\"]\n    },\n    \"exposes\": [\"verifyTokenMW\", \"verifyTokenAdminMW\"]\n}",
+    "middlewares\\doorman-middleware.ts": "{\n    \"description\": \"Middleware to authorize requests based on doormanKey\",\n    \"dependencies\": {\n        \"../utils/config\": [\"appConfig\"],\n        \"../models/status-enum\": [\"StatusCode\"]\n    },\n    \"exposes\": [\"doorman\"]\n}",
+    "middlewares\\errorHandler.ts": "{\n    \"description\": \"Catches and handles errors for the application\",\n    \"dependencies\": {\n        \"../utils/helpers\": [\"logError\"],\n        \"../models/exceptions\": [\"AppException\"]\n    },\n    \"exposes\": [\"catchAll\"]\n}"
+}
